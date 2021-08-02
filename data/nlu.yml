@@ -1,0 +1,253 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - hey there
+    - let's go
+    - hey dude
+    - morning
+    - afternoon
+    - evening
+
+
+- intent: goodbye
+  examples: |
+    - bye
+    - see you
+    - thanks 
+    - night
+    - end
+    - happy landing
+    - pass
+    - concession
+
+- intent: askhealth
+  examples: |
+    - how are you?
+    - what's up
+    - what's happening
+    - are you ok?
+    - how goes it
+    - how's everything
+
+- intent: affirm
+  examples: |
+    - ok
+    - yes sure
+    - why not
+    - i would love to
+    - good
+    - my pleasure
+    - yes
+    - healthy
+    - fine
+    - nice
+    - great
+    - well
+    - happy
+    - allright
+    - very well
+    - ofcourse
+    - indeed
+    - absolutely
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not-at-all
+    - never
+    - disagree
+    - no-way
+    - none
+    - i do not want to
+    - negative
+    - refusal
+    - neither
+    - denial
+    - bad
+    - unhealthy
+    - sad
+
+- intent: getting_started
+  examples: |
+    - getting started
+    - start
+    - get start
+    - gettingstarted
+    - activate
+    - begin
+    - introduce
+    - show
+    - what can you do
+    - show me interesting
+    - guide
+    - who are you
+    - let's go
+
+
+- intent: about_product
+  examples: |
+    - provide me detail about product
+    - what is this
+    - approximately
+    - just-about
+    - concern
+    - show details
+    - information
+    - thereabout
+    - fifth ventricle
+    - about product
+    - product
+    - details
+
+- intent: contact_us
+  examples: |
+    - communication
+    - contact-us
+    - connect
+    - visit
+    - contact support
+    - meet
+    - interact
+    - speak to
+    - talk
+    - reach
+    - call
+    - approach
+    - how can i reach you
+    - how to contact
+    - did you have telephone
+
+- intent: how_to_use_product
+  examples: |
+    - how to use product
+    - how to connect with smartphone
+    - what is this product
+    - connect with bluetooth
+    - connect app with product
+    - how to record
+    - product installation
+    - use product
+    - show me setup
+
+- intent: bot_challenge
+  examples: |
+    - who are you?
+    - tell me your name
+    - who i am talking to
+    - where you stay
+    - give me your introduction
+    - are you human ?
+    - are you bot ?
+
+- intent: askName
+  examples: |
+    - my name is [rinkesh]{"entity":"name","value":"rinkesh"} 
+    - people call me [vikas]{"entity":"name","value":"vikas"} 
+    - i am [dhruvil]{"entity":"name","value":"dhruvil"} 
+    - [karun]{"entity":"name","value":"karun"} 
+    - i [jemis]{"entity":"name","value":"entity"} 
+    
+- intent: askEmail
+  examples: |
+    - [rinkeshpanwar1997@gmail.com]{"entity":"email","value":"rinkeshpanwar1997@gmail.com"}
+    - [a@yahoo.com]{"entity":"email","value":"a@yahoo.com"}
+    - my email address is [prashantchaudhary112@yahoo.in]{"entity":"email","value":"prashantchaudhary112@yahoo.in"}
+    - it is [chaudhary222@gmail.com]{"entity":"email","value":"chaudhary222@gmail.com"}
+    - you can mail me [vikaspanwar1995@xcitech.com]{"entity":"email","value":"vikaspanwar1995@xcitech.com"}
+    - [something@xyznope.in]{"entity":"email","value":"something@xyznope.in"}
+    - [rinkeshpanwar1997@gmail.in]{"entity":"email","value":"rinkeshpanwar1997@gmail.in"}
+    - [a@yahoo.co.in]{"entity":"email","value":"a@yahoo.co.in"}
+    - my email address is [prashantchaudhary112@hotmail.in]{"entity":"email","value":"prashantchaudhary112@hotmail.in"}
+    - email address is [chaudhary222@hotmail.com]{"entity":"email","value":"chaudhary222@hotmail.com"}
+    - you can mail me [dramaqueen2365@yahoo.com]{"entity":"email","value":"dramaqueen2365@yahoo.com"}
+    - [something@jabba.co.in]{"entity":"email","value":"something@jabba.co.in"}
+
+- intent: review
+  examples: |
+    - review
+    - review section
+    - i want to give review
+    - i am not happy with service
+    - i want to complain
+    - where can i register my complain?
+    - i am here to give you review
+    - i do not like this app
+    - chatbot is not working properly
+    - who can listen my complain
+
+- intent: selfDiagnose
+  examples: |
+    - hey i want to do self diagnosis test
+    - how to do self diagnosis
+    - how to diagnose
+    - self diagnosis
+    - feeling very bad
+    - i am not healthy
+# - intent: faq
+#   examples: |
+#     - i have question
+#     - want to know something
+#     - hey can you help me
+  
+# - intent: deny
+#   examples: |
+#     - sorry
+#     - i can not
+#     - no
+#     - bye
+#     - i do not want to
+
+# - intent: age
+#   examples: |
+#     - i am [37]{"entity":"age"} year old
+#     - my age is [20]{"entity":"age"}
+#     - [37]{"entity":"age"}
+#     - i turn [17]{"entity":"age"} this month
+  
+# - intent: name
+#   examples: |
+#     - i am [rinkesh]{"entity":"name"}
+#     - i am [vishal]{"entity":"name"}
+#     - my name is [vurshal]{"entity":"name"}
+#     - [vikas]{"entity":"name"}
+#     - i am [thor]{"entity":"name"}
+#     - my name is [thor]{"entity":"name"}
+#     - my mom called me [rutvik]{"entity":"name"}
+#     - [thor]{"entity":"name"} is my name
+#     - my father called me [rinkesh]{"entity":"name"} 
+#     - people call me [rutvik]{"entity":"name"}
+#     - you can call me [jabba]{"entity":"name"}
+
+# - intent: self_assessment
+#   examples: |
+#     - bad day
+#     - feel bad
+#     - ill
+#     - i have diseases
+#     - self assessment 
+#     - check me
+#     - diagnos me
+
+# - intent: yes
+#   examples: |
+#     - yes
+#     - always
+#     - hmm
+#     - little bit
+#     - very high
+
+# - intent: no
+#   examples: |
+#     - no
+#     - not much
+#     - very low
+#     - often
+#     - nope
+#     - do not

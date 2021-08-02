@@ -1,0 +1,80 @@
+version: "2.0"
+
+stories:
+
+- story: normal_conversation
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_availableOption
+  - intent: askhealth
+  - action: utter_healthResponse
+  - intent: affirm
+  - action: utter_positiveReply
+  - action: utter_positiveHealth
+  - action: utter_availableOption
+  - intent: how_to_use_product
+  - action: utter_howToUseProduct
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: normal_conversation_bad_health
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_availableOption
+  - intent: askhealth
+  - action: utter_healthResponse
+  - intent: deny
+  - action: utter_negativeHealth
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: getting_started_negative
+  steps:
+  - intent: getting_started
+  - action: utter_gettingStarted
+  - intent: deny
+  - action: utter_contactUS
+  - action: utter_wantToActivateMessageForm
+  - intent: deny
+  - action: utter_goodbye
+
+# - story: about_product
+#   steps:
+#   - intent: about_product
+#   - action: utter_aboutproduct
+#   - action: utter_contactUS
+#   - action: utter_wantToActivateMessageForm
+#   - intent: deny
+#   - action: utter_positiveHealth
+#   - action: utter_goodbye
+
+# - story: product_usage
+#   steps:
+#   - action: utter_availableOption
+#   - intent: how_to_use_product
+#   - action: utter_howToUseProduct
+
+# - story: bot_challenge
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_botResponse
+#   - intent: affirm
+#   - action: utter_greet
+#   - action: utter_availableOption
+
+# - story: invoke custom action
+#   steps:
+#   - intent: deny
+#   - action: utter_goodbye
+#   - action: action_send_query
+
+# - story: form
+#   steps:
+#   - action: utter_wantToActivateMessageForm
+#   - intent: affirm
+#   - action: userQueryForm
+#   - active_loop: userQueryForm

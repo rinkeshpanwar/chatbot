@@ -1,0 +1,174 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - askhealth
+  - affirm
+  - deny
+  - getting_started
+  - about_product
+  - how_to_use_product
+  - contact_us
+  - bot_challenge
+  - askName
+  - askEmail
+  - review
+  - selfDiagnose
+
+entities:
+  - name
+  - email
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  message:
+    type: text
+    influence_conversation: false
+  likeAbout:
+    type: text
+    influence_conversation: false
+  improve:
+    type: text
+    influence_conversation: false
+  star:
+    type: text
+    influence_conversation: false
+
+forms:
+  user_query_form:
+    required_slots:
+      name:
+        - type: from_text
+          entity: name
+      email:
+        - type: from_entity
+          entity: email
+      message:
+        - type: from_text
+  user_review_form:
+    required_slots:
+      email:
+        - type: from_entity
+          entity: email
+      star:
+        - type: from_text
+      likeAbout:
+        - type: from_text
+      improve:
+        - type: from_text
+
+actions:
+  - action_first
+  - action_review
+  - validate_user_review_form
+
+
+responses:
+  utter_greet:
+  - text: "Hi 👋 ! It's good to see you! \nSelect the topic or write your question below."
+  - text: "Hello, i can help you with."
+  - text: "I'm a bot programmed to answer only some of the frequent questions. Here are the topics I can help you with."
+
+  utter_availableOption:
+  - text: "\n-getting started. \n-About Product. \n-How to use product?. \n-Contact Support. \n-Self Diagnosis. \n-Add Review. "
+
+  utter_goodbye:
+  - text: "Have a nice day"
+  - text: "Good to talk with you. Bye take care."
+  - text: "Hope you like our service. Good bye."
+  - text: "Thank you for using our chatbot service."
+
+  utter_healthResponse:
+  - text: "I am good. How are you."
+  - text: "I am doing great. what about you."
+  - text: "I am okay. What about you. I hope every-one is doing great."
+
+  utter_positiveReply:
+  - text: "Good.."
+  - text: "Great...."
+  - text: "We get your positive response."
+  - text: "Thank you for your positive response."
+
+  utter_positiveHealth:
+  - text: "God is always protecting us."
+  - text: "Healthy life is more beautiful....Sounds good."
+
+  utter_negativeHealth:
+  - text: "Ohh sorry to hear this."
+  - text: "We are very sorry to hear this."
+  - text: "Sometime things time take to get right."
+  - text: "Never loose hope. This time will also pass soon."
+
+  utter_gettingStarted:
+  - text: "I am fifth ventricle chatbot powered by AI .I can lookup for your queries in About Product, Contact Fifth Ventricle, How to use product, Self diagnosis, and Give review."
+  
+  utter_howToUseProduct:
+  - text: "We are happy to help you. This guide will help you to go through each and every step for your need \n
+  -Download Fifth Ventricle application from PlayStore/AppStore .\n
+  -Switch on Device you want to paired with.\n
+  -Switch on your mobile Bluetooth.\n
+  -Scan for available devices.\n
+  -Connect your device with your handset.\n
+  -Once device is connected you can start using your device.\n
+  "
+
+  utter_contactUS:
+  - text: "For more information visit www.fifthventricle.in or you can can mail us at info@fifthventicle.in."
+  - text: "You can always visit www.fifthventricle.in or you can can mail us at info@fifthventicle.in."
+  - text: "We are happy to listen you.\nVisit www.fifthventricle.in or you can can mail us at info@fifthventicle.in."
+
+  utter_aboutproduct:
+  - text: "A new class of clarity The Fifth Ventricle Digital Stethoscope features the outstanding acoustics, comfort and quality , enhanced by powerful digital technology. Features like up to 40x amplification1 and active noise cancellation can help you auscultate with greater confidence. The product connects with Fifth Ventricle Software on a Smart-phone device to visualize, record and share data"
+  - text: "The fifth ventricle is a Digital stethoscope that helps to enhance the sound quality of heartbeat, Lungs sound, etc. powered by AI with 40x Sound amplification, real-time sound sharing via Smartphone application, AI analysis, and much more. ."
+
+  utter_botResponse:
+  - text: "Hello i am fifth ventricle powered by AI. I am here to solve query related to product. Type 'start' to continue"
+  - text: "I am chat bot, you can type 'start' to continue."
+  - text: "Hey, you are talking to chatbot. I reside in cloud and sleep there only. I can solve your query just type 'start'"
+
+  utter_wantToActivateMessageForm:
+  - text: "Do you want to send query from here?"
+  - text: "Do you want to draft a mail to us?"
+
+  utter_ask_name:
+  - text: "What is your name?"
+  - text: "Please provide your name."
+  - text: "To move further please provide your name."
+
+  utter_ask_email:
+  - text: "please provide your email address"
+  - text: "Inorder to move forward ,we need your email address. Kindly provide us"
+
+  utter_ask_message:
+  - text: "Enter your message here"
+  - text: "Provide your complete message"
+
+  utter_thankYou:
+  - text: "Thank you for your query we got your request. Here is detail about query  \nName:-{name} \nE-mail:-{email} \nYour Message:-{message}."
+
+  utter_ask_likeAbout:
+  - text: "What did you like about this"
+
+  utter_ask_improve:
+  - text: "What you want to improve"
+
+  utter_ask_star:
+  - text: "How much rating would you give?"
+
+  utter_self_diagnosis:
+  - text: "Now you can self diagnose easily by visit https://www.fifthventricle.in/diagnosis/"
+  - text: "Click here https://www.fifthventricle.in/diagnosis/ for self diagnose"
+  - text: "To self diagnose visit https://www.fifthventricle.in/diagnosis/ . "
+
+  utter_thankyou_review_form:
+  - text: "Dear {email}, thanks for your review. We would love to hear more about your experience, so that we can use your valuable feedback to deliver an even better experience next time. Please reach out to [info@fifthventricle.in] with any further comments or suggestions you wish to share. Again, thank you for taking the time to review our app!"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

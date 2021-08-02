@@ -1,0 +1,70 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: always show product detail whenever user ask about product
+  steps:
+  - intent: about_product
+  - action: utter_aboutproduct
+
+- rule: product_usage
+  steps:
+  - intent: how_to_use_product
+  - action: utter_howToUseProduct
+
+- rule: bot_challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_botResponse
+  - action: utter_availableOption
+
+- rule: Activate form whenever user say for contact support for sending query
+  steps:
+  - action: utter_wantToActivateMessageForm
+  - intent: affirm
+  - action: user_query_form
+  - active_loop: user_query_form
+
+- rule: contact support form activate
+  steps:
+  - intent: contact_us
+  - action: user_query_form
+  - active_loop: user_query_form
+
+- rule: submit form
+  condition:
+  - active_loop: user_query_form
+  steps:
+  - action: user_query_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thankYou
+  - action: action_first
+
+- rule: activate review form whenever user want to activate form
+  steps:
+  - intent: review
+  - action: user_review_form
+  - active_loop: user_review_form
+
+- rule: submit form
+  condition:
+  - active_loop: user_review_form
+  steps:
+  - action: user_review_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_thankyou_review_form
+  - action: action_review
+
+- rule: call self diagnosis whenever user ask for self diagnosis
+  steps:
+  - intent: selfDiagnose
+  - action: utter_self_diagnosis
