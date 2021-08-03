@@ -1,1 +1,1 @@
-worker: rasa run -m models --enable-api 
+worker: rasa run -m models --enable-api --debug
